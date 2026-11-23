@@ -181,7 +181,7 @@ $("fl").href=wl("أهلاً فوش برنت");rc();
 /* Google Sheets data */
 const C=window.CONFIG||{},ADDR="398 شارع الحرية، شارع أبو قير الرئيسي، بالقرب من بنك فيصل الإسلامي، الإسكندرية، مصر";
 const KM={whatsapp:"wa",address:"addr",instagram:"ig",facebook:"fb",hero_title:"ht",hero_subtitle:"hs"};
-function csv(t){const R=[];let r=[],c="",q=false;for(let i=0;i<t.length;i++){const ch=t[i];if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=ch}else if(ch=='"')q=true;else if(ch==","){r.push(c);c=""}else if(ch=="\n"||ch=="\r"){if(ch=="\r"&&t[i+1]=="\n")i++;r.push(c);c="";R.push(r);r=[]}else c+=ch}if(c||r.length){r.push(c);R.push(r)}const hd=(R.shift()||[]).map(x=>x.trim().toLowerCase());return R.filter(x=>x.some(v=>v.trim())).map(x=>Object.fromEntries(hd.map((k,i)=>[k,(x[i]||"").trim()])))}
+function csv(t){const R=[];let r=[],c="",q=false;for(let i=0;i<t.length;i++){const ch=t[i];if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=ch}else if(ch=='"')q=true;else if(ch==","){r.push(c);c=""}else if(ch=="\n"||ch=="\r"){if(ch=="\r"&&t[i+1]=="\n")i++;r.push(c);c="";R.push(r);r=[]}else c+=ch}if(c||r.length){r.push(c);R.push(r)}const HA={"الاسم":"name","اسم المنتج":"name","التصنيف":"category","القسم":"category","الوصف":"description","السعر":"price","المقاسات":"sizes","الخامات":"materials","الصور":"images","الصورة":"images","مميز":"featured","ظاهر":"visible","الترتيب":"order"};const hd=(R.shift()||[]).map(x=>{x=x.replace(/^\uFEFF/,"").trim().toLowerCase();return HA[x]||x});return R.filter(x=>x.some(v=>v.trim())).map(x=>Object.fromEntries(hd.map((k,i)=>[k,(x[i]||"").trim()])))}
 const ld=async u=>{if(!u)return null;const r=await fetch(u);if(!r.ok)throw 0;return csv(await r.text())};
 const km={};let kn=0;
 function ck(cn){cn=(cn||"عام").trim();let k=Object.keys(CATS).find(x=>x==cn||CATS[x][0]==cn||CATS[x][1].toLowerCase()==cn.toLowerCase());if(!k){k=km[cn]||(km[cn]="x"+(++kn));CATS[k]=[cn,cn,"",""]}return k}
@@ -194,8 +194,10 @@ function ap(){if(S.wa)WA=String(S.wa).replace(/\D/g,"");$("fl").href=wl("أهل�
  try{const[p,w,s]=await Promise.all([ld(C.PRODUCTS_CSV),ld(C.PORTFOLIO_CSV),ld(C.SETTINGS_CSV)]);
   if(s)s.forEach(r=>{const k=KM[(r.key||"").toLowerCase()];if(k&&r.value)S[k]=r.value});
   if(w){WORKS=mapW(w);rw=WORKS.length>0}
-  if(p){all=mapP(p);items=all}}catch(e){er=true}
- ap();route();if(er)$("bc").innerHTML='<span style="color:#dc2626">تعذر تحميل البيانات. حدّث الصفحة بعد شوية.</span>'})();
+  if(p){window.__p0=p[0];all=mapP(p);items=all}}catch(e){er=true}
+ ap();route();let m=er?"تعذر تحميل الشيت. تأكد إن الرابط في config.js هو رابط Publish to web بصيغة CSV وإن التاب منشور.":!C.PRODUCTS_CSV?"ملف config.js مفيهوش رابط المنتجات، فده عرض تجريبي.":"";
+ if(!er&&C.PRODUCTS_CSV&&!all.length)m="الشيت اتقرا لكن مفيش منتجات صالحة. الأعمدة اللي لقيتها: "+Object.keys(window.__p0||{}).join(", ")+". لازم يكون فيه عمود name، وعمود visible مايكونش \"لا\".";
+ if(m)$("bc").innerHTML='<span style="color:#dc2626">'+m+'</span>'})();
 </script>
 </body>
 </html>
