@@ -10,12 +10,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"PrintShop","name":"Foush Print","telephone":"+201003757434","address":{"@type":"PostalAddress","streetAddress":"398 شارع الحرية، شارع أبو قير الرئيسي","addressLocality":"الإسكندرية","addressCountry":"EG"}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Inter:wght@500;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#faf9fc;--ink:#18151f;--mut:#6b6776;--card:#fff;--line:#e8e5ee;--acc:#6d28d9;--acc2:#ede7fb;--dark:#18151f;--on-dark:#fff;color-scheme:light}
+:root{--f:Cairo;--bg:#faf9fc;--ink:#18151f;--mut:#6b6776;--card:#fff;--line:#e8e5ee;--acc:#6d28d9;--acc2:#ede7fb;--dark:#18151f;--on-dark:#fff;color-scheme:light}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#121016;--ink:#f3f1f7;--mut:#a09bab;--card:#1c1923;--line:#2d2938;--acc:#a78bfa;--acc2:#2a2142;--dark:#1c1923;color-scheme:dark}}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;height:auto}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-body{background:var(--bg);color:var(--ink);font-family:Cairo,Inter,sans-serif;line-height:1.7;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--f),Inter,sans-serif;line-height:1.7;overflow-x:hidden}
 .w{max-width:1120px;margin:auto;padding:0 20px}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
 header .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
@@ -24,7 +24,7 @@ header .w{display:flex;align-items:center;justify-content:space-between;height:6
 nav{display:flex;gap:22px}
 nav a{color:var(--mut);text-decoration:none;font-weight:600;font-size:15px;transition:.2s}
 nav a:hover{color:var(--acc)}
-.btn{display:inline-block;background:var(--acc);color:#fff;border:0;padding:11px 22px;border-radius:999px;font:700 15px Cairo;cursor:pointer;text-decoration:none;transition:transform .2s}
+.btn{display:inline-block;background:var(--acc);color:#fff;border:0;padding:11px 22px;border-radius:999px;font:700 15px var(--f);cursor:pointer;text-decoration:none;transition:transform .2s}
 .btn:hover{transform:translateY(-2px)}
 .btn.o{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
 @media(max-width:720px){nav{display:none}}
@@ -53,7 +53,7 @@ h2{font-size:clamp(26px,4vw,38px);font-weight:900;margin-bottom:8px}
 .svc div:first-child,.svc div:nth-child(4){background:var(--dark);color:var(--on-dark)}
 .svc div:first-child p,.svc div:nth-child(4) p{color:#b8b3c4}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-.tabs button{border:1.5px solid var(--line);background:transparent;color:var(--ink);padding:8px 16px;border-radius:999px;font:600 14px Cairo;cursor:pointer}
+.tabs button{border:1.5px solid var(--line);background:transparent;color:var(--ink);padding:8px 16px;border-radius:999px;font:600 14px var(--f);cursor:pointer}
 .tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
 .p{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s;animation:in .5s both}
@@ -83,21 +83,21 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
 #adm{display:none;position:fixed;inset:0;z-index:50;background:var(--bg);overflow:auto;padding:20px}
 #adm.on{display:block}
 #adm .box2{max-width:720px;margin:auto}
-#adm input,#adm select,#adm textarea{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;font:16px Cairo;background:var(--card);color:var(--ink);margin:4px 0 12px}
+#adm input,#adm select,#adm textarea{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;font:16px var(--f);background:var(--card);color:var(--ink);margin:4px 0 12px}
 .row{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:8px;background:var(--card)}
 .row span{flex:1}
-.x{background:#dc2626;color:#fff;border:0;border-radius:10px;padding:6px 12px;font:600 13px Cairo;cursor:pointer}
+.x{background:#dc2626;color:#fff;border:0;border-radius:10px;padding:6px 12px;font:600 13px var(--f);cursor:pointer}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 nav a.on{color:var(--acc)}.bc{font-size:13px;color:var(--mut);padding:18px 0 0}.bc a{color:var(--acc);text-decoration:none}
 .cart{position:relative}.cart i{position:absolute;top:-6px;left:-6px;background:var(--ink);color:var(--bg);border-radius:99px;font:700 11px Inter;padding:1px 6px;font-style:normal}
 .fl{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:18px;z-index:30;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font:800 14px Inter;text-decoration:none;box-shadow:0 4px 14px #0003}
-.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.bar input,.bar select,.f input,.f select,.f textarea{padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;font:16px Cairo;background:var(--card);color:var(--ink)}.bar input{flex:1;min-width:180px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.bar input,.bar select,.f input,.f select,.f textarea{padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;font:16px var(--f);background:var(--card);color:var(--ink)}.bar input{flex:1;min-width:180px}
 .f{display:grid;gap:4px;max-width:560px}.f input,.f select,.f textarea{width:100%;margin-bottom:8px}.err{color:#dc2626;font-size:13px;min-height:18px}.ok{background:var(--acc2);padding:16px;border-radius:14px}
 .mod{position:fixed;inset:0;background:#000a;z-index:60;display:none;place-items:center;padding:16px}.mod.on{display:grid}.mod>div{background:var(--bg);border-radius:22px;max-width:520px;width:100%;max-height:90vh;overflow:auto;padding:22px}
 .dt{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}.big{aspect-ratio:1;border-radius:22px;background:var(--acc2);display:grid;place-items:center;font:800 64px Inter;color:var(--acc);background-size:cover;background-position:center}
 .th{display:flex;gap:8px;margin-top:8px}.th button{width:64px;height:64px;border-radius:12px;border:2px solid var(--line);background:var(--acc2);cursor:pointer;background-size:cover}.th button.on{border-color:var(--acc)}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}.chips button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:7px 14px;border-radius:99px;font:600 14px Cairo;cursor:pointer}.chips button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}.chips button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:7px 14px;border-radius:99px;font:600 14px var(--f);cursor:pointer}.chips button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
 .mas{columns:3 200px;gap:14px}.mas div{break-inside:avoid;margin-bottom:14px;border-radius:18px;display:grid;place-items:end start;padding:16px;font-weight:700;cursor:pointer;color:#fff;transition:.25s}.mas div:hover{transform:scale(1.02)}
 .q{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background:var(--card)}.q summary{padding:14px 18px;font-weight:700;cursor:pointer}.q p{padding:0 18px 14px;color:var(--mut)}
 .ci{display:flex;gap:10px;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}
@@ -105,6 +105,21 @@ nav a.on{color:var(--acc)}.bc{font-size:13px;color:var(--mut);padding:18px 0 0}.
 .logo{display:inline-flex;align-items:center;gap:10px}.logo img{display:block}.logo .li{height:38px;width:auto}.logo .lt{height:19px;width:auto}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]) .logo img{filter:invert(1)}}
 .fl svg{width:32px;height:32px;fill:#fff}.tot{font-weight:800;color:var(--acc);font-size:18px;margin:6px 0}
+.an-fade{animation:anF .8s both}@keyframes anF{from{opacity:0;transform:translateY(14px)}}
+.an-slide{animation:anL .8s both}@keyframes anL{from{opacity:0;transform:translateX(-30px)}}
+.an-float{animation:fl 6s ease-in-out infinite}.an-pulse{animation:anP 2s ease-in-out infinite}@keyframes anP{50%{transform:scale(1.06)}}
+.an-spin{animation:anS 12s linear infinite}@keyframes anS{to{rotate:360deg}}.an-none{animation:none!important;transition:none!important}
+body:not(.ed) .hid{display:none!important}body.ed .hid{opacity:.35}
+body.ed{padding-bottom:230px}body.ed [data-ek]:hover{outline:2px dashed var(--acc);outline-offset:2px;cursor:pointer}body.ed .shapes,body.ed .sh{pointer-events:auto}
+body.ed .sel{outline:3px solid var(--acc)!important;outline-offset:2px}
+#edui .dock{position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--card);border-top:2px solid var(--acc);padding:10px 14px;max-height:42vh;overflow:auto;font:600 13px var(--f)}
+.edbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.edbar .btn{padding:7px 14px;font-size:13px}.edbar select,.edg select,.edg input:not([type=range]):not([type=color]){padding:6px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:13px var(--f)}
+.edg{display:flex;flex-wrap:wrap;gap:12px}.edg label{display:flex;flex-direction:column;font-size:12px;gap:2px;color:var(--mut)}.edr2{display:flex;gap:8px;margin-top:10px;align-items:center;flex-wrap:wrap}
+#edui button:not(.btn){border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 12px;font:600 13px var(--f);cursor:pointer}
+.edp{display:none;position:fixed;inset:0;z-index:100;background:#000a;overflow:auto;padding:16px}.edp.on{display:block}
+.edbox{background:var(--bg);color:var(--ink);border-radius:18px;max-width:640px;margin:auto;padding:18px}.edh{display:flex;justify-content:space-between;margin-bottom:8px}
+.edc{border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:10px;background:var(--card)}.edr{display:flex;gap:6px;margin-bottom:6px;align-items:center}.edr input,.edc>input{flex:1;min-width:0;padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:14px var(--f)}.edc>input{width:100%;margin-bottom:6px}.edr.sub{margin-inline-start:18px}
+.edc.hid,.edr.hid{opacity:.45}
 </style>
 </head>
 <body>
@@ -129,7 +144,7 @@ design:["خدمات التصميم","Design Services","تصميم جرافيك|�
 const DEF=[["كروت بيزنس","biz"],["استيكر لوجو دائري","hand"],["استيكر واتر بروف شفاف","school"],["ليبل أسماء الأطفال","school"],["كارت NFC + QR","biz"],["كروت توزيعات","event"],["تصميم لوجو وهوية","design"],["ليبل منتجات","hand"]].map((x,i)=>({id:"d"+i,n:x[0],c:x[1],d:"التفاصيل والخامات والمقاسات حسب طلبك.",p:"",s:"حسب الطلب",m:"حسب الطلب",t:i}));
 let WORKS=[["استيكرات براند","hand"],["كروت بيزنس","biz"],["ليبلز مدرسية","school"],["كروت مناسبة","event"],["فينيل مرايا","biz"],["كارت NFC","biz"]];
 const FAQ=[["إزاي أطلب؟","ضيف المنتجات لقائمة الطلب أو املا نموذج عرض السعر، وهنكمل معاك على واتساب."],["الأسعار ثابتة؟","الأسعار بتختلف حسب المقاس والكمية والخامة، فبنديك عرض سعر."],["أرسل تصميمي؟","أكيد، ابعت الملف على واتساب أو اطلب منا تصميمه."],["بتطبعوا إيه؟","فينيل، استنسل، صور، استيكر واتر بروف، مطبوعات ورقية، ليبلز مدارس، وكروت NFC."]];
-let WA="201003757434",items=DEF,all=DEF,S={},rw=false,cart=[],db=null,asset=null,isAdm=false,gi=0;
+let WA="201003757434",items=DEF,all=DEF,D={},CAL={},EM=false,S={},rw=false,cart=[],db=null,asset=null,isAdm=false,gi=0;
 try{cart=JSON.parse(localStorage.getItem("fpc")||"[]")}catch(e){}
 const $=i=>document.getElementById(i),esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const wl=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
@@ -146,17 +161,18 @@ home(){return `<div class="hero"><div class="shapes"><i class="sh s1"></i><i cla
 <section><div class="w"><h2>منتجات مختارة</h2><p class="sub">&nbsp;</p><div class="grid">${items.filter(i=>i.f).concat(items).filter((v,k,a)=>a.indexOf(v)==k).slice(0,4).map(card).join("")}</div></div></section>
 <section><div class="w"><div class="cta"><h2>جاهز نطبع فكرتك؟</h2><p>ابعتلنا التفاصيل ونرد بعرض سعر.</p><a class="btn" href="#contact">اطلب عرض سعر</a></div></div></section>`},
 about(){return hero("من نحن","Foush Print مشروع تصميم وطباعة مصري لأصحاب المشاريع والأفراد.")+`<div class="w"><p>بنقدم التصميم والطباعة والتجهيز والقص والتشطيب حسب نوع المنتج والخامة، وبنكمل معاك الطلب على واتساب.</p></div>`},
-services(){return hero("الخدمات","خمس تصنيفات تغطي احتياجك.")+`<div class="w"><div class="svc">${Object.entries(CATS).map(([k,c],i)=>`<div><em>0${i+1} · ${c[1]}</em><h3>${c[0]}</h3><p>${c[3]}</p><a href="#service-${k}" style="color:var(--acc);font-weight:700;text-decoration:none">التفاصيل ←</a></div>`).join("")}</div></div>`},
-service(k){const c=CATS[k];if(!c)return V.nf();const L=c[2].split("|").filter(Boolean);return hero(c[0],c[3])+`<div class="w"><div class="chips" id="sch" data-k="${k}"><button class="on" data-sv="">الكل</button>${L.map(x=>`<button data-sv="${esc(x)}">${esc(x)}</button>`).join("")}</div><div class="grid" id="sg">${sg(k,"")}</div><br><a class="btn" href="#contact">اطلب عرض سعر</a></div>`},
-products(){return hero("المنتجات","ابحث وفلتر وقارن.")+`<div class="w"><div class="bar"><input id="sq" placeholder="ابحث عن منتج"><select id="sc"><option value="">كل التصنيفات</option>${Object.entries(CATS).map(([k,c])=>`<option value="${k}">${c[0]}</option>`).join("")}</select><select id="ssub"><option value="">كل التصنيفات الفرعية</option></select><select id="ss"><option value="t">الأحدث</option><option value="n">الاسم</option></select></div><div class="grid" id="pg"></div></div>`},
+services(){return hero("الخدمات","خمس تصنيفات تغطي احتياجك.")+`<div class="w"><div class="svc">${CE().map(([k,c],i)=>`<div><em>0${i+1} · ${c[1]}</em><h3>${c[0]}</h3><p>${c[3]}</p><a href="#service-${k}" style="color:var(--acc);font-weight:700;text-decoration:none">التفاصيل ←</a></div>`).join("")}</div></div>`},
+service(k){const c=CATS[k];if(!c||c[4])return V.nf();const L=c[2].split("|").filter(Boolean);return hero(c[0],c[3])+`<div class="w"><div class="chips" id="sch" data-k="${k}"><button class="on" data-sv="">الكل</button>${L.map(x=>`<button data-sv="${esc(x)}">${esc(x)}</button>`).join("")}</div><div class="grid" id="sg">${sg(k,"")}</div><br><a class="btn" href="#contact">اطلب عرض سعر</a></div>`},
+products(){return hero("المنتجات","ابحث وفلتر وقارن.")+`<div class="w"><div class="bar"><input id="sq" placeholder="ابحث عن منتج"><select id="sc"><option value="">كل التصنيفات</option>${CE().map(([k,c])=>`<option value="${k}">${c[0]}</option>`).join("")}</select><select id="ssub"><option value="">كل التصنيفات الفرعية</option></select><select id="ss"><option value="t">الأحدث</option><option value="n">الاسم</option></select></div><div class="grid" id="pg"></div></div>`},
 product(id){const i=items.find(x=>x.id==id);if(!i)return V.nf();gi=0;const S=opts(i.s),M=opts(i.m),Q=qo(i.q);return `<div class="w" style="padding:28px 20px"><div class="dt"><div><div class="big" id="bigi" ${img(i)}>${i.img?"":"FP"}</div>${(i.imgs||[]).length>1?`<div class="th">${i.imgs.map(u=>`<button data-gi="${esc(u)}" style="background-image:url(${esc(u)})"></button>`).join("")}</div>`:""}</div><div><small>${CATS[i.c]?CATS[i.c][0]:""}</small><h2>${esc(i.n)}</h2><p class="sub">${esc(i.d)}</p><div class="pr" style="font-weight:800;color:var(--acc);font-size:20px">${pc(i)}</div><div class="f" id="of" data-id="${i.id}"><label>المقاس</label><select id="os">${(S.length?S:["حسب الطلب"]).map(x=>`<option>${esc(x)}</option>`).join("")}</select><label>الخامة</label><select id="om">${(M.length?M:["حسب الطلب"]).map(x=>`<option>${esc(x)}</option>`).join("")}</select><label>الكمية</label>${Q.length?`<select id="oq">${Q.map(x=>`<option>${x}</option>`).join("")}</select>`:`<input id="oq" type="number" min="1" step="1" value="1">`}<label>ملاحظات</label><textarea id="on" rows="2"></textarea><div class="tot" id="tot"></div><div class="err" id="oe"></div></div><button class="btn" data-add="${i.id}">أضف لقائمة الطلب</button> <a class="btn o" id="owa" target="_blank" data-wa="${i.id}" href="#">اطلب عبر واتساب</a></div></div></div>`},
-portfolio(){return hero("معرض الأعمال",rw?"من أعمال Foush Print.":"أعمال مؤقتة تُستبدل بصور أعمالنا الحقيقية.")+`<div class="w"><div class="chips" id="pf"><button class="on" data-f="">الكل</button>${Object.entries(CATS).filter(([k])=>WORKS.some(w=>w[1]==k)).map(([k,c])=>`<button data-f="${k}">${c[0]}</button>`).join("")}</div><div class="mas" id="mg"></div></div>`},
-contact(){return hero("تواصل معنا / طلب عرض سعر","املا النموذج وهيفتح لك واتساب بالتفاصيل جاهزة.")+`<div class="w"><div class="f" id="qf"><label>الاسم</label><input id="qn"><label>رقم الهاتف</label><input id="qp" inputmode="tel" dir="ltr"><label>نوع الخدمة</label><select id="qs">${Object.entries(CATS).map(([k,c])=>`<option value="${k}">${c[0]}</option>`).join("")}</select><label>المنتج المطلوب</label><input id="qm"><label>الكمية</label><input id="qq" type="number" min="1"><label>المقاس</label><input id="qz"><label>الخامة</label><input id="qx"><label>تفاصيل إضافية</label><textarea id="qd" rows="3"></textarea><p class="sub" style="margin:0">لإرفاق تصميم، ابعته على واتساب بعد فتح المحادثة.</p><div class="err" id="qe"></div><button class="btn" id="qgo">إرسال عبر واتساب</button></div></div>`},
+portfolio(){return hero("معرض الأعمال",rw?"من أعمال Foush Print.":"أعمال مؤقتة تُستبدل بصور أعمالنا الحقيقية.")+`<div class="w"><div class="chips" id="pf"><button class="on" data-f="">الكل</button>${CE().filter(([k])=>WORKS.some(w=>w[1]==k)).map(([k,c])=>`<button data-f="${k}">${c[0]}</button>`).join("")}</div><div class="mas" id="mg"></div></div>`},
+contact(){return hero("تواصل معنا / طلب عرض سعر","املا النموذج وهيفتح لك واتساب بالتفاصيل جاهزة.")+`<div class="w"><div class="f" id="qf"><label>الاسم</label><input id="qn"><label>رقم الهاتف</label><input id="qp" inputmode="tel" dir="ltr"><label>نوع الخدمة</label><select id="qs">${CE().map(([k,c])=>`<option value="${k}">${c[0]}</option>`).join("")}</select><label>المنتج المطلوب</label><input id="qm"><label>الكمية</label><input id="qq" type="number" min="1"><label>المقاس</label><input id="qz"><label>الخامة</label><input id="qx"><label>تفاصيل إضافية</label><textarea id="qd" rows="3"></textarea><p class="sub" style="margin:0">لإرفاق تصميم، ابعته على واتساب بعد فتح المحادثة.</p><div class="err" id="qe"></div><button class="btn" id="qgo">إرسال عبر واتساب</button></div></div>`},
 faq(){return hero("الأسئلة الشائعة","")+`<div class="w">${FAQ.map(f=>`<details class="q"><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("")}</div>`},
 nf(){return hero("الصفحة غير موجودة","")+`<div class="w"><a class="btn" href="#home">الرئيسية</a></div>`}};
 const NAMES={home:"الرئيسية",about:"من نحن",services:"الخدمات",service:"الخدمات",products:"المنتجات",product:"المنتجات",portfolio:"أعمالنا",contact:"تواصل",faq:"الأسئلة الشائعة"};
-function route(){const h=location.hash.slice(1)||"home",ix=h.indexOf("-"),r=ix<0?h:h.slice(0,ix),a=ix<0?"":h.slice(ix+1);
- const f=V[r]||V.nf;$("app").innerHTML="<div class='w' style='padding:20px'>جاري التحميل…</div>";$("app").innerHTML=f(a);if(r=="product")tot();
+function route(){if(location.hash=="#edit"){history.replaceState(null,"","#home");setTimeout(login,0)}
+const h=location.hash.slice(1)||"home",ix=h.indexOf("-"),r=ix<0?h:h.slice(0,ix),a=ix<0?"":h.slice(ix+1);
+ const f=V[r]||V.nf;$("app").innerHTML="<div class='w' style='padding:20px'>جاري التحميل…</div>";$("app").innerHTML=f(a);if(window.desel)desel();if(r!="service"&&r!="product")ds($("app"),"v"+r);if(r=="product")tot();
  $("bc").innerHTML=r=="home"?"":`<a href="#home">الرئيسية</a> / ${r=="service"||r=="product"?`<a href="#${r}s">${NAMES[r]}</a> / `:""}${NAMES[r]||""}`;
  document.querySelectorAll("#nav a").forEach(x=>x.classList.toggle("on",x.getAttribute("href")=="#"+(r=="service"?"services":r=="product"?"products":r)));
  scrollTo(0,0);if(r=="products"){ps();pl()}if(r=="portfolio")pf("");}
@@ -185,6 +201,75 @@ document.addEventListener("click",e=>{const t=e.target,d=t.dataset;
 document.addEventListener("input",e=>{const i=e.target.id;if(i=="sc")ps();if(["sq","sc","ssub","ss"].includes(i))pl();if(i=="oq")tot()});document.addEventListener("change",e=>{if(e.target.id=="oq")tot()});
 addEventListener("hashchange",route);
 $("fl").href=wl("أهلاً فوش برنت");rc();
+/* ===== design layer (visual editor) ===== */
+let PW="",PH=document.querySelector("header").innerHTML,PF=document.querySelector("footer").innerHTML,dirty=false,sel=null,hist=[];
+const HX=c=>{c=String(c).trim();if(/^#[0-9a-f]{6}$/i.test(c))return c;const m=c.match(/\d+(\.\d+)?/g);if(!m||m.length<3)return"#000000";return"#"+m.slice(0,3).map(x=>(+x|0).toString(16).padStart(2,"0")).join("")};
+const hs=s=>{let h=5381;for(const c of s)h=((h*33)^c.codePointAt(0))>>>0;return h.toString(36)};
+const CE=()=>Object.entries(CATS).filter(([k,c])=>!c[4]);
+const INL=/^(B|I|EM|STRONG|SPAN|BR|SMALL|U)$/;
+const isT=el=>!!el.textContent.trim()&&!el.querySelector("[id]")&&!/^(BUTTON|INPUT|SELECT|TEXTAREA|IMG|svg)$/i.test(el.tagName)&&[...el.children].every(c=>INL.test(c.tagName));
+function san(h){const t=document.createElement("template");t.innerHTML=h;t.content.querySelectorAll("*").forEach(n=>{if(!/^(B|I|EM|STRONG|U|SPAN|BR|SMALL)$/.test(n.tagName)){n.replaceWith(...n.childNodes);return}[...n.attributes].forEach(a=>{if(!(a.name=="class"&&/^[\w -]*$/.test(a.value)))n.removeAttribute(a.name)})});return t.innerHTML}
+function tg(root,pre){(function w(p,path){[...p.children].forEach((c,i)=>{c.dataset.ei=i;if(c.matches("script,style,svg,option")||c.closest(".grid,.mas,.chips,.th"))return;const k=pre+":"+path+i;c.dataset.ek=k;w(c,path+i+".")})})(root,"")}
+function ds(root,pre){tg(root,pre);const E=D.el||{};root.querySelectorAll("[data-ek]").forEach(el=>{const o=E[el.dataset.ek];if(!o)return;if(o.h!=null&&isT(el))el.innerHTML=san(o.h);if(o.hr&&el.tagName=="A"&&/^(https?:|#|tel:|mailto:)/.test(o.hr))el.setAttribute("href",o.hr);if(o.s)Object.assign(el.style,o.s);if(o.a)el.classList.add("an-"+o.a);if(o.x)el.classList.add("hid")});
+ const O=D.ord||{};Object.keys(O).forEach(ok=>{const[pp,pk]=ok.split("|");if(pp!=pre)return;const par=pk=="root"?root:root.querySelector('[data-ek="'+pk+'"]');if(!par)return;const a=O[ok];[...par.children].filter(c=>c.dataset.ei!=null).sort((x,y)=>{const i=a.indexOf(+x.dataset.ei),j=a.indexOf(+y.dataset.ei);return(i<0?999:i)-(j<0?999:j)}).forEach(c=>par.appendChild(c))})}
+const ah=()=>{ds(document.querySelector("header"),"hd");ds(document.querySelector("footer"),"ft")};
+const FONTS=["Cairo","Tajawal","Almarai","IBM Plex Sans Arabic","Noto Kufi Arabic","Changa","El Messiri","Readex Pro"];
+function thm(){const t=D.theme||{},r=document.documentElement.style;["acc","bg","ink","dark","acc2"].forEach(k=>r.removeProperty("--"+k));["acc","bg","ink","dark"].forEach(k=>{if(t[k])r.setProperty("--"+k,t[k])});if(t.acc)r.setProperty("--acc2",t.acc+"22");const f=FONTS.includes(t.f)?t.f:"Cairo";if(f!="Cairo"&&!document.getElementById("fnt-"+hs(f))){const l=document.createElement("link");l.id="fnt-"+hs(f);l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?family="+f.replace(/ /g,"+")+":wght@400;600;800;900&display=swap";document.head.appendChild(l)}r.setProperty("--f",'"'+f+'"')}
+function applyCats(){if(!D.cats)return;const n={};D.cats.forEach(c=>{n[c.k]=[c.n,c.en||c.n,c.subs.filter(s=>!s.h).map(s=>s.n).join("|"),c.d||"",!!c.h];CAL[c.k]={a:[c.n,...(c.al||[])],s:Object.fromEntries(c.subs.map(s=>[s.n,{al:s.al||[],h:!!s.h}]))}});Object.keys(CATS).forEach(k=>{if(!n[k])n[k]=CATS[k]});Object.keys(CATS).forEach(k=>delete CATS[k]);Object.assign(CATS,n)}
+const vis=i=>{const c=CATS[i.c];if(c&&c[4])return false;const s=CAL[i.c]&&CAL[i.c].s[i.sc];return!(s&&s.h)};
+const api=async b=>(await fetch(C.ADMIN_API,{method:"POST",body:JSON.stringify(b)})).json();
+function H(){const s=JSON.stringify(D);if(hist[hist.length-1]!==s){hist.push(s);if(hist.length>40)hist.shift()}}
+function dr(){dirty=true;const e=$("edst");if(e)e.textContent="تعديلات غير محفوظة ●"}
+function EL(){const k=sel.dataset.ek;D.el=D.el||{};return D.el[k]=D.el[k]||{}}
+function stl(p,v){H();sel.style[p]=v;const o=EL();o.s=o.s||{};o.s[p]=v;dr()}
+function desel(){if(sel){sel.classList.remove("sel");sel.removeAttribute("contenteditable")}sel=null;insp()}
+function pick(el){desel();sel=el;el.classList.add("sel");if(isT(el)){H();el.contentEditable="true";el.focus()}insp()}
+function rr(){const y=scrollY;items=all.filter(vis);route();scrollTo(0,y)}
+function refresh(){document.querySelector("header").innerHTML=PH;document.querySelector("footer").innerHTML=PF;rc();ap();ah();thm();applyCats();desel();rr()}
+function insp(){const b=$("edin");if(!b)return;if(!sel){b.innerHTML="<span>اضغط على أي عنصر في الصفحة عشان تعدله: نص، لون، حجم، حركة، مكان.</span>";return}
+ const cs=getComputedStyle(sel),o=(D.el||{})[sel.dataset.ek]||{},s=o.s||{},an=[...sel.classList].find(c=>c.startsWith("an-")),a=an?an.slice(3):"";
+ const rg=(l,p,mn,mx,v,u)=>`<label>${l}<input type="range" data-st="${p}" data-u="${u||""}" min="${mn}" max="${mx}" value="${v}"></label>`;
+ b.innerHTML=`<div class="edg"><label>لون الكلام<input type="color" data-st="color" value="${HX(s.color||cs.color)}"></label><label>لون الخلفية<input type="color" data-st="backgroundColor" value="${HX(s.backgroundColor||cs.backgroundColor)}"></label><button data-ed="nobg">بدون خلفية</button>${rg("حجم الخط","fontSize",8,120,parseInt(cs.fontSize),"px")}<label>سمك الخط<select data-st="fontWeight"><option value="">كما هو</option><option value="400">عادي</option><option value="700">عريض</option><option value="900">عريض جدًا</option></select></label><label>المحاذاة<select data-st="textAlign"><option value="">كما هي</option><option value="right">يمين</option><option value="center">وسط</option><option value="left">يسار</option></select></label>${rg("استدارة الحواف","borderRadius",0,100,parseInt(cs.borderTopLeftRadius)||0,"px")}${rg("المسافة الداخلية","padding",0,120,parseInt(cs.paddingTop)||0,"px")}${rg("الشفافية","opacity",0,100,Math.round(cs.opacity*100))}${rg("العرض %","width",10,100,parseInt(s.width)||100,"%")}${rg("إزاحة أفقية","mvx",-400,400,parseInt(s.marginLeft||s.left)||0)}${rg("إزاحة رأسية","mvy",-400,400,parseInt(s.marginTop||s.top)||0)}<label>الحركة<select data-an="1"><option value="">كما هي</option><option value="fade">ظهور تدريجي</option><option value="slide">انزلاق</option><option value="float">عوم</option><option value="pulse">نبض</option><option value="spin">دوران</option><option value="none">إيقاف الحركة</option></select></label>${sel.tagName=="A"?`<label>الرابط<input data-hr="1" dir="ltr" value="${esc(o.hr||sel.getAttribute("href")||"")}"></label>`:""}</div><div class="edr2"><button data-ed="bef">⬆ قبل</button><button data-ed="aft">⬇ بعد</button><button data-ed="hid">${sel.classList.contains("hid")?"إظهار":"إخفاء"}</button><button data-ed="rst">استرجاع الأصل</button>${isT(sel)?"<small>اكتب مباشرة داخل العنصر لتعديل النص</small>":""}</div>`;
+ b.querySelector("[data-an]").value=a;[["fontWeight"],["textAlign"]].forEach(([p])=>{const e=b.querySelector('select[data-st="'+p+'"]');if(e)e.value=s[p]||""})}
+function mvs(dir){H();const p=sel.parentElement,ch=[...p.children].filter(c=>c.dataset.ei!=null),i=ch.indexOf(sel),j=i+dir;if(j<0||j>=ch.length)return;dir<0?p.insertBefore(sel,ch[j]):p.insertBefore(ch[j],sel);D.ord=D.ord||{};D.ord[sel.dataset.ek.split(":")[0]+"|"+(p.dataset.ek||"root")]=[...p.children].filter(c=>c.dataset.ei!=null).map(c=>+c.dataset.ei);dr()}
+function seedCats(){D.cats=D.cats||[];Object.entries(CATS).forEach(([k,c])=>{let m=D.cats.find(x=>x.k==k);const L=c[2].split("|").filter(Boolean);if(!m){D.cats.push({k,n:c[0],en:c[1],d:c[3]||"",h:!!c[4],al:[],subs:L.map(n=>({n,al:[]}))})}else L.forEach(n=>{if(!m.subs.some(s=>s.n==n))m.subs.push({n,al:[]})})})}
+function cmUI(){const C=D.cats,i2=(i,f,v,x="")=>`<input data-c="${i}" data-f="${f}" data-o="${esc(v)}" value="${esc(v)}" ${x}>`;$("edp").innerHTML=`<div class="edbox"><div class="edh"><b>إدارة التصنيفات</b><button data-ed="pclose">إغلاق</button></div><p class="sub">الحذف بيخفي التصنيف ومنتجاته من الموقع من غير ما يمسح حاجة من الشيت، وتقدر ترجعه. تغيير الاسم بيفضل شغال مع الاسم القديم في الشيت.</p>`+C.map((c,i)=>`<div class="edc${c.h?" hid":""}"><div class="edr">${i2(i,"n",c.n)}${i2(i,"en",c.en||"",'dir="ltr" placeholder="English"')}<button data-cm="up" data-c="${i}">▲</button><button data-cm="dn" data-c="${i}">▼</button><button data-cm="hide" data-c="${i}">${c.h?"استرجاع":"حذف"}</button></div>${i2(i,"d",c.d||"",'placeholder="وصف الفئة"')}`+c.subs.map((s,j)=>`<div class="edr sub${s.h?" hid":""}">↳ <input data-c="${i}" data-s="${j}" data-o="${esc(s.n)}" value="${esc(s.n)}"><button data-cm="sup" data-c="${i}" data-s="${j}">▲</button><button data-cm="sdn" data-c="${i}" data-s="${j}">▼</button><button data-cm="shide" data-c="${i}" data-s="${j}">${s.h?"استرجاع":"حذف"}</button></div>`).join("")+`<button data-cm="addsub" data-c="${i}">+ تصنيف فرعي</button></div>`).join("")+`<button class="btn" data-cm="addcat">+ فئة جديدة</button></div>`;$("edp").classList.add("on")}
+function thUI(){const t=D.theme||{},r=getComputedStyle(document.documentElement),col=(k,l)=>`<label>${l}<input type="color" data-th="${k}" value="${HX(t[k]||r.getPropertyValue("--"+k))}"></label>`;$("edp").innerHTML=`<div class="edbox"><div class="edh"><b>ألوان وخطوط الموقع</b><button data-ed="pclose">إغلاق</button></div><div class="edg">${col("acc","اللون الرئيسي")}${col("bg","لون الخلفية")}${col("ink","لون الكلام")}${col("dark","لون الأقسام الغامقة")}<label>الخط<select data-thf="1">${FONTS.map(f=>`<option ${(t.f||"Cairo")==f?"selected":""}>${f}</option>`).join("")}</select></label></div><button data-ed="thr">رجوع للألوان الأصلية</button></div>`;$("edp").classList.add("on")}
+function cmAct(d){const C=D.cats,c=C[+d.c],j=+d.s,sw=(a,i,k)=>{if(k<0||k>=a.length)return;[a[i],a[k]]=[a[k],a[i]]};H();
+ switch(d.cm){case"up":sw(C,+d.c,+d.c-1);break;case"dn":sw(C,+d.c,+d.c+1);break;case"hide":c.h=!c.h;break;case"sup":sw(c.subs,j,j-1);break;case"sdn":sw(c.subs,j,j+1);break;case"shide":c.subs[j].h=!c.subs[j].h;break;
+ case"addsub":{const n=prompt("اسم التصنيف الفرعي؟");if(!n)return;c.subs.push({n:n.trim(),al:[]});break}
+ case"addcat":{const n=prompt("اسم الفئة الجديدة؟");if(!n)return;C.push({k:"m"+Date.now().toString(36),n:n.trim(),en:n.trim(),d:"",h:false,al:[],subs:[]});break}}
+ dr();applyCats();cmUI();rr()}
+function ui(){if($("edui"))return;const d=document.createElement("div");d.id="edui";d.innerHTML=`<div class="dock"><div class="edbar"><b>وضع التصميم</b><select id="edpg">${[["home","الرئيسية"],["about","من نحن"],["services","الخدمات"],["products","المنتجات"],["portfolio","الأعمال"],["contact","تواصل"],["faq","الأسئلة"]].map(p=>`<option value="${p[0]}">${p[1]}</option>`).join("")}</select><button class="btn" data-ed="save">حفظ</button><button class="btn o" data-ed="undo">تراجع</button><button class="btn o" data-ed="cat">التصنيفات</button><button class="btn o" data-ed="thm">ألوان وخطوط</button><button class="btn o" data-ed="out">خروج</button><span id="edst"></span></div><div id="edin"></div></div><div id="edp" class="edp"></div>`;document.body.appendChild(d);insp();
+ $("edpg").onchange=e=>{location.hash="#"+e.target.value};
+ d.addEventListener("click",async e=>{const t=e.target,a=t.dataset.ed;if(t.dataset.cm)return cmAct(t.dataset);
+  if(a=="save")await save();
+  if(a=="undo"){if(hist.length){D=JSON.parse(hist.pop());dr();refresh();if($("edp").classList.contains("on"))cmUI()}}
+  if(a=="cat"){H();seedCats();applyCats();cmUI()}if(a=="thm")thUI();if(a=="pclose")$("edp").classList.remove("on");
+  if(a=="out"){if(dirty&&!confirm("في تعديلات مش محفوظة. تخرج؟"))return;dirty=false;location.href=location.pathname}
+  if(a=="nobg")stl("backgroundColor","transparent");if(a=="bef")mvs(-1);if(a=="aft")mvs(1);
+  if(a=="hid"){H();const o=EL();o.x=!o.x;sel.classList.toggle("hid",o.x);dr();insp()}
+  if(a=="rst"){H();delete D.el[sel.dataset.ek];dr();refresh()}
+  if(a=="thr"){H();delete D.theme;dr();thm();thUI()}});
+ d.addEventListener("input",e=>{const t=e.target,p=t.dataset.st;if(p&&sel){if(p=="mvx"||p=="mvy"){const x=+(sel.parentElement&&$("edin").querySelector('[data-st="mvx"]').value),y=+$("edin").querySelector('[data-st="mvy"]').value,cp=getComputedStyle(sel).position;if(cp=="absolute"||cp=="fixed"){stl("marginLeft",x+"px");stl("marginTop",y+"px")}else{if(cp=="static")stl("position","relative");stl("left",x+"px");stl("top",y+"px")}}else stl(p,p=="opacity"?t.value/100:t.value?t.value+(t.dataset.u||""):"")}
+  if(t.dataset.hr&&sel){H();const o=EL();o.hr=t.value;sel.setAttribute("href",t.value);dr()}
+  if(t.dataset.th){H();D.theme=D.theme||{};D.theme[t.dataset.th]=t.value;thm();dr()}});
+ d.addEventListener("change",e=>{const t=e.target;
+  if(t.dataset.an!==undefined&&sel){H();[...sel.classList].filter(c=>c.startsWith("an-")).forEach(c=>sel.classList.remove(c));const o=EL();if(t.value){sel.classList.add("an-"+t.value);o.a=t.value}else delete o.a;dr()}
+  if(t.dataset.thf){H();D.theme=D.theme||{};D.theme.f=t.value;thm();dr()}
+  if(t.dataset.f!==undefined&&D.cats){H();const c=D.cats[+t.dataset.c],f=t.dataset.f,v=t.value.trim(),o=t.dataset.o;if(f=="n"&&v&&v!=o){c.al=[...(c.al||[]),o];c.n=v}else if(f!="n")c[f]=v;dr();applyCats();cmUI();rr()}
+  if(t.dataset.s!==undefined&&D.cats){H();const c=D.cats[+t.dataset.c],s=c.subs[+t.dataset.s],v=t.value.trim(),o=t.dataset.o;if(v&&v!=o){s.al=[...(s.al||[]),o];s.n=v}dr();applyCats();cmUI();rr()}});
+ document.body.classList.add("ed")}
+async function save(){const st=$("edst");st.textContent="جاري الحفظ…";D.v=Date.now();try{const r=await api({action:"save",password:PW,design:D});if(!r.ok)throw 0;dirty=false;st.textContent="تم الحفظ ✓ بيظهر للزوار خلال دقائق"}catch(e){st.textContent="تعذر الحفظ، جرب تاني"}}
+function login(){if(!C.ADMIN_API){alert("لازم تضبط ADMIN_API في config.js الأول (راجع README).");return}
+ const o=document.createElement("div");o.id="edlg";o.className="edp on";o.innerHTML=`<div class="edbox" style="max-width:360px"><h3>دخول وضع التصميم</h3><input id="edpw" type="password" placeholder="كلمة السر" style="width:100%;padding:11px;border:1.5px solid var(--line);border-radius:12px;font:16px var(--f)"><div class="err" id="edle"></div><button class="btn" id="edgo">دخول</button> <button class="btn o" id="edno">إلغاء</button></div>`;document.body.appendChild(o);
+ $("edno").onclick=()=>o.remove();const go=async()=>{$("edle").textContent="جاري التحقق…";try{const r=await api({action:"get",password:$("edpw").value});if(!r.ok)throw 0;PW=$("edpw").value;D=r.design||{};o.remove();EM=true;ui();refresh()}catch(e){$("edle").textContent="كلمة السر غلط أو الاتصال فشل"}};$("edgo").onclick=go;$("edpw").onkeydown=e=>{if(e.key=="Enter")go()};$("edpw").focus()}
+document.addEventListener("click",e=>{if(!EM)return;const t=e.target;if(t.closest("#edui,#edlg"))return;e.preventDefault();e.stopImmediatePropagation();const el=t.closest("[data-ek]");if(el)pick(el)},true);
+document.addEventListener("input",e=>{if(EM&&sel&&e.target==sel&&sel.isContentEditable){EL().h=san(sel.innerHTML);dr()}});
+document.addEventListener("keydown",e=>{if(EM&&sel&&e.target==sel&&e.key=="Enter"){e.preventDefault();document.execCommand("insertLineBreak")}},true);
+document.addEventListener("paste",e=>{if(EM&&sel&&e.target==sel){e.preventDefault();document.execCommand("insertText",false,(e.clipboardData||window.clipboardData).getData("text/plain"))}},true);
+addEventListener("beforeunload",e=>{if(dirty){e.preventDefault();e.returnValue=""}});
+
 /* Google Sheets data */
 const C=window.CONFIG||{},ADDR="398 شارع الحرية، شارع أبو قير الرئيسي، بالقرب من بنك فيصل الإسلامي، الإسكندرية، مصر";
 const KM={whatsapp:"wa",address:"addr",instagram:"ig",facebook:"fb",hero_title:"ht",hero_subtitle:"hs"};
@@ -197,19 +282,21 @@ const fz=(a,b)=>{a=nz(a);b=nz(b);return !!a&&!!b&&(a==b||(a.length>3&&b.includes
 const fmt=n=>(Math.round(n*100)/100).toLocaleString("en-US");
 function pn(p){p=dg(p).replace(/(\d),(?=\d{3}\b)/g,"$1").replace(/٫/g,".").trim();const m=p.match(/^(\d+(?:\.\d+)?)\s*(?:جنيه|جنيها|ج\.?م?|egp|le)?\.?$/i);return m?parseFloat(m[1]):null}
 function qo(s){return[...new Set(dg(s).split(/[,،|;؛\-–\s]+/).map(Number).filter(n=>n>0))].sort((a,b)=>a-b)}
-function ck(cn){cn=(cn||"عام").trim();let k=Object.keys(CATS).find(x=>x==cn||fz(CATS[x][0],cn)||fz(CATS[x][1],cn));if(!k){k=km[cn]||(km[cn]="x"+(++kn));CATS[k]=[cn,cn,"",""]}return k}
-function sb(k,s){s=(s||"").trim();if(!s)return"";const L=CATS[k][2].split("|").filter(Boolean),f=L.find(x=>fz(x,s));if(f)return f;CATS[k][2]=L.concat(s).join("|");return s}
+function ck(cn){cn=(cn||"عام").trim();let k=Object.keys(CATS).find(x=>x==cn||fz(CATS[x][0],cn)||fz(CATS[x][1],cn)||(CAL[x]&&CAL[x].a.some(a=>fz(a,cn))));if(!k){k=km[cn]||(km[cn]="x"+hs(nz(cn)));CATS[k]=[cn,cn,"","",false]}return k}
+function sb(k,s){s=(s||"").trim();if(!s)return"";const m=CAL[k]&&Object.entries(CAL[k].s).find(([n,o])=>[n,...o.al].some(x=>fz(x,s)));if(m)return m[0];const L=CATS[k][2].split("|").filter(Boolean),f=L.find(x=>fz(x,s));if(f)return f;CATS[k][2]=L.concat(s).join("|");return s}
 function iu(s){s=s.trim();if(!s)return"";const m=s.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:export=\w+&)?id=)([\w-]+)/);if(m)return"https://drive.google.com/thumbnail?id="+m[1]+"&sz=w1200";return/^https?:/.test(s)?s:"images/"+s}
 const NO=/^(no|لا|false|0|hidden|مخفي)$/i,YES=/^(yes|نعم|1|true|y)$/i;
 function mapP(rows){return rows.filter(r=>r.name&&!NO.test(r.visible||"")).map((r,k)=>{const imgs=(r.image_urls||r.images||"").split(/\s*[|\n;]\s*|\s*,\s+(?=\S)/).map(iu).filter(Boolean),c=ck(r.category);return{id:/^[\w-]+$/.test(r.id||"")?r.id:"p"+k,n:r.name,c,sc:sb(c,r.subcategory),d:r.description||"",p:r.price||"",pm:r.price?"fixed":"quote",s:r.sizes||"",m:r.materials||"",q:r.quantities||"",f:YES.test(r.featured||""),o:+r.order||0,t:k,imgs,img:imgs[0]||""}}).sort((a,b)=>(a.o||999)-(b.o||999)||a.t-b.t)}
 function mapW(rows){return rows.filter(r=>r.title&&!NO.test(r.visible||"")).sort((a,b)=>(YES.test(b.featured||"")?1:0)-(YES.test(a.featured||"")?1:0)).map(r=>[r.title,ck(r.category),iu(r.image||""),r.description||""])}
 function ap(){if(S.wa)WA=String(S.wa).replace(/\D/g,"");$("fl").href=wl("أهلاً فوش برنت");$("ft").innerHTML=esc(S.addr||ADDR)+"<br>"+(S.ig?`<a href="${esc(S.ig)}" target="_blank" rel="noopener">Instagram</a> `:"")+(S.fb?`<a href="${esc(S.fb)}" target="_blank" rel="noopener">Facebook</a> `:"")+`<a href="#faq">الأسئلة الشائعة</a>`}
 (async()=>{let er=false;if(C.PRODUCTS_CSV){items=[];all=[]}if(C.PORTFOLIO_CSV)WORKS=[];
- try{const[p,w,s]=await Promise.all([ld(C.PRODUCTS_CSV),ld(C.PORTFOLIO_CSV),ld(C.SETTINGS_CSV)]);
+ try{const[p,w,s,dz]=await Promise.all([ld(C.PRODUCTS_CSV),ld(C.PORTFOLIO_CSV),ld(C.SETTINGS_CSV),ld(C.DESIGN_CSV).catch(()=>null)]);
+  if(dz)try{D=JSON.parse(dz.map(r=>r.json||"").join(""))}catch(e){D={}}
+  applyCats();
   if(s)s.forEach(r=>{const k=KM[(r.key||"").toLowerCase()];if(k&&r.value)S[k]=r.value});
   if(w){WORKS=mapW(w);rw=WORKS.length>0}
-  if(p){window.__p0=p[0];all=mapP(p);items=all}}catch(e){er=true}
- ap();route();let m=er?"تعذر تحميل الشيت. تأكد إن الرابط في config.js هو رابط Publish to web بصيغة CSV وإن التاب منشور.":!C.PRODUCTS_CSV?"ملف config.js مفيهوش رابط المنتجات، فده عرض تجريبي.":"";
+  if(p){window.__p0=p[0];all=mapP(p);items=all.filter(vis)}}catch(e){er=true}
+ ap();ah();thm();route();let m=er?"تعذر تحميل الشيت. تأكد إن الرابط في config.js هو رابط Publish to web بصيغة CSV وإن التاب منشور.":!C.PRODUCTS_CSV?"ملف config.js مفيهوش رابط المنتجات، فده عرض تجريبي.":"";
  if(!er&&C.PRODUCTS_CSV&&!all.length)m="الشيت اتقرا لكن مفيش منتجات صالحة. الأعمدة اللي لقيتها: "+Object.keys(window.__p0||{}).join(", ")+". لازم يكون فيه عمود name، وعمود visible مايكونش \"لا\".";
  if(m)$("bc").innerHTML='<span style="color:#dc2626">'+m+'</span>'})();
 </script>
