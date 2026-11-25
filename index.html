@@ -120,6 +120,7 @@ body.ed .sel{outline:3px solid var(--acc)!important;outline-offset:2px}
 .edbox{background:var(--bg);color:var(--ink);border-radius:18px;max-width:640px;margin:auto;padding:18px}.edh{display:flex;justify-content:space-between;margin-bottom:8px}
 .edc{border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:10px;background:var(--card)}.edr{display:flex;gap:6px;margin-bottom:6px;align-items:center}.edr input,.edc>input{flex:1;min-width:0;padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:14px var(--f)}.edc>input{width:100%;margin-bottom:6px}.edr.sub{margin-inline-start:18px}
 .edc.hid,.edr.hid{opacity:.45}
+.p[data-go]{cursor:pointer}
 </style>
 </head>
 <body>
@@ -152,7 +153,7 @@ const sv=()=>{try{localStorage.setItem("fpc",JSON.stringify(cart))}catch(e){}};
 const opts=s=>String(s||"").split(/[,،]/).map(x=>x.trim()).filter(Boolean);
 const pc=i=>i.p&&i.pm!="quote"?(pn(i.p)!=null?fmt(pn(i.p))+" جنيه":esc(i.p)):"اطلب عرض سعر";
 const img=i=>i.img?`style="background-image:url(${esc(i.img)})"`:"";
-const card=i=>`<div class="p"><div class="im" ${img(i)}>${i.img?"":"FP"}</div><div class="b"><small>${CATS[i.c]?CATS[i.c][0]:esc(i.c)}${i.sc?" · "+esc(i.sc):""}</small><h4>${esc(i.n)}</h4><div class="pr">${pc(i)}</div><small>${esc(i.d)}</small><br><a href="#product-${i.id}">التفاصيل</a> · <a href="#" data-q="${i.id}">نظرة سريعة</a></div></div>`;
+const card=i=>`<div class="p" data-go="${i.id}"><div class="im" ${img(i)}>${i.img?"":"FP"}</div><div class="b"><small>${CATS[i.c]?CATS[i.c][0]:esc(i.c)}${i.sc?" · "+esc(i.sc):""}</small><h4>${esc(i.n)}</h4><div class="pr">${pc(i)}</div><small>${esc(i.d)}</small><br><a href="#product-${i.id}">التفاصيل</a> · <a href="#" data-q="${i.id}">نظرة سريعة</a></div></div>`;
 const hero=(t,s)=>`<div class="w" style="padding-top:28px"><h2>${t}</h2><p class="sub">${s}</p></div>`;
 const sg=(k,v)=>items.filter(i=>i.c==k&&(!v||i.sc==v)).map(card).join("")||"<p class='sub'>لا توجد منتجات في هذا التصنيف بعد.</p>";
 const V={
@@ -185,6 +186,7 @@ function cartView(){const t=cart.length&&cart.every(c=>c.u!=null)?cart.reduce((a
 function tot(){const e=$("tot"),of=$("of");if(!e||!of)return;const i=items.find(x=>x.id==of.dataset.id),u=i&&i.pm!="quote"?pn(i.p):null,q=+$("oq").value;e.textContent=u!=null&&q>0?"إجمالي الحساب: "+fmt(u*q)+" جنيه":""}
 function line(id){const i=items.find(x=>x.id==id),q=+$("oq").value;if(!(q>0)||q%1){$("oe").textContent="اكتب كمية صحيحة";return null}$("oe").textContent="";return{n:i.n,q,s:$("os").value,m:$("om").value,o:$("on").value.trim(),u:i.pm!="quote"?pn(i.p):null}}
 document.addEventListener("click",e=>{const t=e.target,d=t.dataset;
+ const cd=t.closest(".p[data-go]");if(cd&&!t.closest("a,button")){location.hash="#product-"+cd.dataset.go;return}
  if(d.x||t.id=="mod")$("mod").classList.remove("on");
  if(d.q){e.preventDefault();const i=items.find(x=>x.id==d.q);mod(`<div class="big" ${img(i)}>${i.img?"":"FP"}</div><h3>${esc(i.n)}</h3><p class="sub">${esc(i.d)}</p><b>${pc(i)}</b><br><br><a class="btn" href="#product-${i.id}" data-x="1">التفاصيل والطلب</a>`)}
  if(d.add){const l=line(d.add);if(l){cart.push(l);sv();rc();t.textContent="تمت الإضافة ✓"}}
